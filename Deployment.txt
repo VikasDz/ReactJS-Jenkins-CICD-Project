@@ -1,0 +1,5 @@
+CI/CD(Continous Integration and Continous Deployment or Delivery)
+
+CodeRepo ---> Build ---> Test ---> Passed ---> Failed ---> Deploy to Server
+(Github)      (Docker)  
+
