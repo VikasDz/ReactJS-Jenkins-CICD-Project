@@ -3,3 +3,16 @@ CI/CD(Continous Integration and Continous Deployment or Delivery)
 CodeRepo ---> Build ---> Test ---> Passed ---> Failed ---> Deploy to Server
 (Github)      (Docker)  
 
+Build Using Docker Container..
+
+echo "Start"
+docker build . -t react-app
+echo "Build"
+docker run -d -p 3000:3000 react-app:latest
+echo "Running"
+
+Build Using Docker Compose..
+docker-compose down
+docker-compose up -d
+
+sudo usermod -aG docker jenkins --For Permission 
