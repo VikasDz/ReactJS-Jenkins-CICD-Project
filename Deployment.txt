@@ -14,6 +14,6 @@ Before using Docker Compose we have to Kill Pervious Docker Container( sudo dock
 Build Using Docker Compose..(apt install docker-compose)
 
 docker-compose down
-docker-compose up -d
+docker-compose up -d --build web
 
 sudo usermod -aG docker jenkins --For Permission 
