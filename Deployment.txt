@@ -3,6 +3,8 @@ CI/CD(Continous Integration and Continous Deployment or Delivery)
 CodeRepo ---> Build ---> Test ---> Passed ---> Failed ---> Deploy to Server
 (Github)      (Docker)  
 
+This is Based On FreeStyle Project. 
+
 Build Using Docker Container..
 echo "Start"
 docker build . -t react-app
