@@ -17,3 +17,5 @@ docker-compose down
 docker-compose up -d --build web
 
 sudo usermod -aG docker jenkins --For Permission 
+
+GitHub hook trigger for GITScm polling ( For Trigger Using Web Hook Check Repo Setting go to WebHook and Make a Change )
