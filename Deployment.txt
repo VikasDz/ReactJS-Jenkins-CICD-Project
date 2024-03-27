@@ -4,14 +4,15 @@ CodeRepo ---> Build ---> Test ---> Passed ---> Failed ---> Deploy to Server
 (Github)      (Docker)  
 
 Build Using Docker Container..
-
 echo "Start"
 docker build . -t react-app
 echo "Build"
 docker run -d -p 3000:3000 react-app:latest
 echo "Running"
 
-Build Using Docker Compose..
+Before using Docker Compose we have to Kill Pervious Docker Container( sudo docker kill container_id)
+Build Using Docker Compose..(apt install docker-compose)
+
 docker-compose down
 docker-compose up -d
 
