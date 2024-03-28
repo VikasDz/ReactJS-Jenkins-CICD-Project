@@ -22,3 +22,13 @@ sudo usermod -aG docker jenkins --For Permission
 
 GitHub hook trigger for GITScm polling ( For Trigger Using Web Hook Check Repo Setting go to WebHook and Make a Change )
 and Also Change in your Jenkins Ports to AnyWhere
+
+============================================================================================
+
+Master Node ==> Public KeyGen(Dalna Hoga) =>> Agents Node In Authorization_kEY
+
+In Jenkins We Have to Add Private Key of Master Node in Authorization With Node IP
+
+sudo usermod -aG docker $USER ==> Give Permission to Node
+
+Install Java, docker.io, docker-compose in Node.
