@@ -1,0 +1,39 @@
+pipeline {
+    agent { label "dev-server"}
+    
+    stages {
+        stage("code"){
+            steps{
+                git url: "https://github.com/VikasDz/ReactJS-Jenkins-CICD-Project.git", branch: "pipeline-in-jenkins"
+                echo 'Code Clone Done'
+            }
+        }
+        stage("build and test"){
+            steps{
+                sh "docker build . -t react-app-test-new"
+                echo 'code build Done'
+            }
+        }
+        stage("scan image"){
+            steps{
+                echo 'image scanning done'
+            }
+        }
+        stage("push"){
+            steps{
+                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
+                sh "docker tag react-app-test-new ${env.dockerHubUser}/react-app-test-new:latest"
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                sh "docker push ${env.dockerHubUser}/react-app-test-new:latest"
+                echo 'image push done'
+                }
+            }
+        }
+        stage("deploy"){
+            steps{
+                sh "docker-compose down && docker-compose up -d"
+                echo 'deployment done'
+            }
+        }
+    }
+}
